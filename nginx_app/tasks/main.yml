@@ -1,0 +1,65 @@
+---
+# tasks file for nginx_app
+ - name: update cache
+   apt:
+     update_cache: true
+     cache_valid_time: 3600 
+ 
+ - name: install nginx
+   apt:
+     name: nginx
+     state: present
+ 
+ - name: app root directory
+   file:
+     path: "{{root}}"
+     state: directory
+     owner: www-data
+     group: www-data
+     mode: "0755"
+     recurse: true
+ 
+ - name: deploy index page
+   template:
+     src: "{{index}}"
+     dest: "{{root}}/index.html"
+     owner: www-data
+     group: www-data
+     mode: "0644"
+   notify: restart nginx
+
+ - name: Remove default site if exists
+   become: true
+   file:
+     path: /etc/nginx/sites-enabled/default
+     state: absent
+   notify: restart nginx
+
+ - name: nginx site config file
+   template:
+     src: nginx.conf.j2
+     dest: /etc/nginx/sites-available/myapp.conf
+     mode: "0644"
+   notify: restart nginx
+
+ - name: Enable site
+   file:
+     src: /etc/nginx/sites-available/myapp.conf
+     dest: /etc/nginx/sites-enabled/myapp.conf
+     state: link
+   notify: restart nginx
+
+ - name: Test nginx config
+   command: nginx -t
+   register: nginx_test
+
+ - name: Show nginx config test result
+   debug:
+     var: nginx_test.stderr
+
+ - name: Ensure nginx started and enabled
+   become: true
+   service:
+     name: nginx
+     state: started
+     enabled: true

@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  author: Nasser
+  description: Install and configure MySQL
+  license: MIT
+  min_ansible_version: 2.9
+dependencies: []

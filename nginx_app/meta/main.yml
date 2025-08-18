@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: nginx_app
+  author: Nasser Tarek
+  description: Install & configure Nginx to serve a static site.
+  license: MIT
+
+  min_ansible_version: 2.14
+
+
+  galaxy_tags:
+    - nginx
+    - web
+    - static
+    - ubuntu
+
+dependencies: []

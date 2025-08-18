@@ -1,0 +1,5 @@
+# defaults file for nginx_app
+app_listen_port: 80
+root: /var/www/myapp
+index: index.html.j2
+enable_gzip: true
