@@ -20,5 +20,5 @@ It follows best practices by organizing tasks into reusable **roles** and managi
 ### Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nasser-tarek/ansible-project-deployment
-   cd <>
+   git clone https://github.com/nasser-tarek/ansible-project-deployment.git
+   cd ansible-project-deployment
