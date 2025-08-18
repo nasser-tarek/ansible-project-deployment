@@ -11,8 +11,8 @@ It follows best practices by organizing tasks into reusable **roles** and managi
 - 📂 Centralized inventory and configuration management.
 
 ### Project Structure
-- `roles/nginx_app/` → Installs and configures Nginx.
-- `roles/db/` → Installs MySQL, creates database, users, and sets root password.
+- `nginx_app/` → Installs and configures Nginx.
+- `db/` → Installs MySQL, creates database, users, and sets root password.
 - `group_vars/` → Centralized variables for environment configuration.
 - `ansible.cfg` → Project configuration file.
 - `inventory.ini` → Inventory file for target hosts.
@@ -20,5 +20,5 @@ It follows best practices by organizing tasks into reusable **roles** and managi
 ### Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
+   git clone https://github.com/nasser-tarek/ansible-project-deployment
+   cd <>
