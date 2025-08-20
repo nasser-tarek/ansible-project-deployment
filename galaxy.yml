@@ -1,0 +1,12 @@
+namespace: nasser_tarek
+name: multi_server_deploy
+version: 1.0.0
+readme: README.md
+authors:
+  - Nasser Tarek
+description: >
+  Ansible collection containing roles for deploying database and nginx app.
+license: MIT
+tags: [ansible, nginx, database, deployment]
+dependencies: {}
+repository: https://github.com/nasser-tarek/ansible-project-deployment
