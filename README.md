@@ -11,8 +11,8 @@ It follows best practices by organizing tasks into reusable **roles** and managi
 - 📂 Centralized inventory and configuration management.
 
 ### Project Structure
-- `nginx_app/` → Installs and configures Nginx.
-- `db/` → Installs MySQL, creates database, users, and sets root password.
+- `roles/nginx_app/` → Installs and configures Nginx.
+- `roles/db/` → Installs MySQL, creates database, users, and sets root password.
 - `group_vars/` → Centralized variables for environment configuration.
 - `ansible.cfg` → Project configuration file.
 - `inventory.ini` → Inventory file for target hosts.
